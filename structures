@@ -1,0 +1,258 @@
+1)
+package main
+
+import "fmt"
+
+type Books struct {
+   title string
+   author string
+   subject string
+   book_id int
+}
+func main() {
+   var Book1 Books    
+   var Book2 Books    
+ 
+   
+   Book1.title = "Go Programming"
+   Book1.author = "jhansi"
+   Book1.subject = "Go Programming Tutorial"
+   Book1.book_id = 978675687
+
+   
+   Book2.title = "postgersql"
+   Book2.author = "suji"
+   Book2.subject = "postgersql Tutorial"
+   Book2.book_id = 6495700
+ 
+   
+   fmt.Printf( "Book 1 title : %s\n", Book1.title)
+   fmt.Printf( "Book 1 author : %s\n", Book1.author)
+   fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
+   fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
+
+   
+   fmt.Printf( "Book 2 title : %s\n", Book2.title)
+   fmt.Printf( "Book 2 author : %s\n", Book2.author)
+   fmt.Printf( "Book 2 subject : %s\n", Book2.subject)
+   fmt.Printf( "Book 2 book_id : %d\n", Book2.book_id)
+}
+
+
+
+Book 1 title : Go Programming
+Book 1 author : jhansi
+Book 1 subject : Go Programming Tutorial
+Book 1 book_id : 978675687
+Book 2 title : postgersql
+Book 2 author : suji
+Book 2 subject : postgersql Tutorial
+Book 2 book_id : 6495700
+
+Program exited.
+
+
+2)
+
+package main
+
+import "fmt"
+
+type Books struct {
+   title string
+   author string
+   subject string
+   book_id int
+}
+func main() {
+   var Book1 Books    
+   var Book2 Books    
+ 
+   
+   Book1.title = "Jira"
+   Book1.author = "navya"
+   Book1.subject = "Jira Tutorial"
+   Book1.book_id = 6495407
+
+   
+   Book2.title = "aws"
+   Book2.author = "madhavi"
+   Book2.subject = "AWS Tutorial"
+   Book2.book_id = 6495700
+ 
+  
+   printBook(Book1)
+
+  
+   printBook(Book2)
+}
+func printBook( book Books ) {
+   fmt.Printf( "Book title : %s\n", book.title);
+   fmt.Printf( "Book author : %s\n", book.author);
+   fmt.Printf( "Book subject : %s\n", book.subject);
+   fmt.Printf( "Book book_id : %d\n", book.book_id);
+}
+
+
+Book title : Jira
+Book author : navya
+Book subject : Jira Tutorial
+Book book_id : 6495407
+Book title : aws
+Book author : madhavi
+Book subject : AWS Tutorial
+Book book_id : 6495700
+
+Program exited.
+
+3)package main
+
+import "fmt"
+
+type Books struct {
+   title string
+   author string
+   subject string
+   book_id int
+}
+func main() {
+   var Book1 Books   
+   var Book2 Books   
+  
+   Book1.title = "Go Programming"
+   Book1.author = "navi"
+   Book1.subject = "Go Programming Tutorial"
+   Book1.book_id = 8675878
+
+  
+   Book2.title = "Telecom Billing"
+   Book2.author = "ravi"
+   Book2.subject = "Telecom Billing Tutorial"
+   Book2.book_id = 7647667
+ 
+   
+   printBook(&Book1)
+
+   
+   printBook(&Book2)
+}
+func printBook( book *Books ) {
+   fmt.Printf( "Book title : %s\n", book.title);
+   fmt.Printf( "Book author : %s\n", book.author);
+   fmt.Printf( "Book subject : %s\n", book.subject);
+   fmt.Printf( "Book book_id : %d\n", book.book_id);
+}
+
+Book title : Go Programming
+Book author : navi
+Book subject : Go Programming Tutorial
+Book book_id : 8675878
+Book title : Telecom Billing
+Book author : ravi
+Book subject : Telecom Billing Tutorial
+Book book_id : 7647667
+
+Program exited.
+
+4)
+
+package main 
+  
+import "fmt"
+  
+
+type Address struct { 
+    Name    string 
+    city    string 
+    Pincode int
+} 
+  
+func main() { 
+  
+    
+    var a Address  
+    fmt.Println(a) 
+  
+    
+    a1 := Address{"jhansi", "banglore", 878745} 
+  
+    fmt.Println("Address1: ", a1) 
+  
+    
+    a2 := Address{Name: "suji", city: "hyderabad", 
+                                 Pincode: 277001} 
+  
+    fmt.Println("Address2: ", a2) 
+  
+    
+    a3 := Address{Name: "Delhi"} 
+    fmt.Println("Address3: ", a3) 
+}
+
+{  0}
+Address1:  {jhansi banglore 878745}
+Address2:  {suji hyderabad 277001}
+Address3:  {Delhi  0}
+
+Program exited.
+
+5)
+
+package main 
+  
+import "fmt"
+  
+
+type Car struct { 
+    Name, Model, Color string 
+    WeightInKg         float64 
+} 
+  
+ 
+func main() { 
+    c := Car{Name: "BMW", Model: "GTC4", 
+            Color: "Red", WeightInKg: 1920} 
+  
+    
+    fmt.Println("Car Name: ", c.Name) 
+    fmt.Println("Car Color: ", c.Color) 
+  
+    
+    c.Color = "Black"
+      
+    
+    fmt.Println("Car: ", c) 
+}
+
+Car Name:  BMW
+Car Color:  Red
+Car:  {BMW GTC4 Black 1920}
+
+Program exited.
+
+6)
+
+package main 
+  
+import "fmt"
+  
+
+type Employee struct { 
+    firstName, lastName string 
+    age, salary int
+} 
+  
+func main() { 
+  
+    
+    emp8 := &Employee{"jhansi", "mallisetty", 23, 60000} 
+  
+    
+    fmt.Println("First Name:", (*emp8).firstName) 
+    fmt.Println("Age:", (*emp8).age) 
+}
+
+First Name: jhansi
+Age: 23
+
+Program exited.
